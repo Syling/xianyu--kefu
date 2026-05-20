@@ -1,0 +1,23 @@
+FROM ai-goofish:local
+
+# 安装缺失的依赖（源码挂载后会覆盖/app，但/opt/venv不受影响）
+RUN pip install --no-cache-dir \
+    "loguru" \
+    "websockets>=10.0,<13.0" \
+    "aiohttp>=3.9.0" \
+    "aiohttp-socks>=0.8.0" \
+    "python-socks[asyncio]>=2.0.0" \
+    "PyExecJS>=1.5.1" \
+    "blackboxprotobuf>=1.0.1" \
+    "psutil>=5.9.0" \
+    "python-multipart>=0.0.6" \
+    "DrissionPage>=4.0.0" \
+    "PyJWT>=2.8.0" \
+    "passlib[bcrypt]>=1.7.4" \
+    "cryptography>=41.0.0" \
+    "python-dateutil>=2.8.2" \
+    "pandas>=2.0.0" \
+    "openpyxl>=3.1.0" \
+    "xlsxwriter>=3.1.0" \
+    "email-validator>=2.0.0" \
+    -i https://pypi.tuna.tsinghua.edu.cn/simple
